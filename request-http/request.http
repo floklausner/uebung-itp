@@ -1,0 +1,25 @@
+POST localhost:8080/book/addBook
+Content-Type: application/json
+
+{
+  "id": 3,
+  "bookTitle": "Hilfe i will nimma",
+  "price": 50.99,
+  "bookstore": {
+    "id": 1,
+    "name": "Fridolin's Store",
+    "location": "Linz",
+    "ownerName": "Fridolin Pumpernickel"
+  },
+  "author": {
+    "id": 1,
+    "name": "Florian Klausner",
+    "age": 19
+  },
+  "buyer": null
+}
+
+###
+
+DELETE localhost:8080/book/1
+
