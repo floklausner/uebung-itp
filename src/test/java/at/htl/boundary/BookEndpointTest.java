@@ -96,6 +96,23 @@ class BookEndpointTest {
 
     @Test
     void deleteBookById() {
+
+        Table table = new Table(dataSource, "BOOK");
+
+        org.assertj.db.output.Outputs.output(table).toConsole();
+
+        given()
+                .when()
+                .delete("/book/1")
+                .then()
+                .statusCode(200);
+
+        table = new Table(dataSource, "BOOK");
+
+        org.assertj.db.api.Assertions.assertThat(table).hasNumberOfRows(1);
+
+        org.assertj.db.output.Outputs.output(table).toConsole();
+
     }
 
     @Test
