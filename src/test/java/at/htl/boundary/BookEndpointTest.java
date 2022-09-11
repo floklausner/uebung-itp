@@ -100,5 +100,23 @@ class BookEndpointTest {
 
     @Test
     void findById() {
+
+        Book bookById;
+
+        bookById = given()
+                .when()
+                    .get("/book/1")
+                .then()
+                    .log().body()
+                    .extract().body().jsonPath().getObject(".", Book.class);
+
+        System.out.println(bookById);
+
+        assertThat(bookById)
+                .isNotNull()
+                .extracting(Book::getId)
+                .isEqualTo(1L);
+
+
     }
 }
