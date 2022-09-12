@@ -81,16 +81,19 @@ class BookEndpointTest {
 //                .value().isEqualTo("Der Anfang der Welt")
 //                .value().isEqualTo("Mamamia");
 
-        org.assertj.db.api.Assertions.assertThat(table)
-                .row(1)
-                .value().isEqualTo(1)
-                .value().isEqualTo(1)
-                .value().isEqualTo("Das Ende der Welt")
-                .value().isEqualTo(14.99)
-                .value().isEqualTo(1)
-                .value().isEqualTo(1)
-                .value().is(null);
+//        org.assertj.db.api.Assertions.assertThat(table)
+//                .row(1)
+//                .value().isEqualTo(1)
+//                .value().isEqualTo(1)
+//                .value().isEqualTo("Das Ende der Welt")
+//                .value().isEqualTo(14.99)
+//                .value().isEqualTo(1)
+//                .value().isEqualTo(1)
+//                .value().is(null);
 
+
+        org.assertj.db.api.Assertions.assertThat(table)
+                .hasNumberOfRows(3);
 
     }
 
